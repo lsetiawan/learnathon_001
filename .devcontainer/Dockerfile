@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 
 # Install libmamba solver to speed things up and the conda-lock
-RUN /opt/conda/bin/conda install -n base -c conda-forge conda-libmamba-solver conda-lock
+RUN /opt/conda/bin/conda install --yes -n base -c conda-forge conda-libmamba-solver conda-lock
 RUN /opt/conda/bin/conda config --set solver libmamba
 
 # Copy environment.yml (if found) to a temp location so we update the environment. Also
